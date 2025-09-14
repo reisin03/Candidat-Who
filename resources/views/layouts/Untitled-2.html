@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidat-Who - Welcome</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        .hero-section {
+            padding: 100px 0;
+            text-align: center;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .btn-custom {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            transition: all 0.3s;
+            margin: 10px;
+            text-decoration: none;
+        }
+        .btn-custom:hover {
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            transform: scale(1.05);
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url('/') }}">Candidat-Who</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h2 class="display-6 fw-bold mb-4">Welcome to</h2>
+            <h1 class="display-4 fw-bold mb-4">Candidat.Who?</h1>
+            <p class="lead mb-5">Your comprehensive platform for managing and tracking election candidates and officials</p>
+            <div class="d-flex justify-content-center flex-wrap">
+                <a href="{{ route('admin.login') }}" class="btn btn-custom btn-lg">
+                    Admin Portal
+                </a>
+                <a href="{{ route('user.login') }}" class="btn btn-custom btn-lg">
+                    User Portal
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Platform Features</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <h4>Candidate Management</h4>
+                        <p>Track and manage all running candidates with detailed profiles and objectives.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <h4>Official Records</h4>
+                        <p>Access comprehensive records of current and past barangay officials.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <h4>SK Monitoring</h4>
+                        <p>Monitor Sangguniang Kabataan activities and member information.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Barangay Officials Section -->
+    <section id="officials" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Barangay Officials</h2>
+            <div class="feature-card text-center">
+                <p class="lead mb-4">Meet the current Barangay Officials of our community</p>
+                <a href="{{ route('brgyofficials.index') }}" class="btn btn-custom">View Barangay Officials</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SK Officials Section -->
+    <section id="sk" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Sangguniang Kabataan Officials</h2>
+            <div class="feature-card text-center">
+                <p class="lead mb-4">Meet the current SK Officials serving the youth sector</p>
+                <a href="{{ route('currentsk.index') }}" class="btn btn-custom">View SK Officials</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">About Candidat.Who?</h2>
+            <p class="lead">Candidat.Who? is a modern platform designed to provide transparency and accessibility in local governance. Our mission is to connect citizens with their elected officials and candidates through comprehensive information sharing.</p>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
