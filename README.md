@@ -1,61 +1,136 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🗳️ Candidat-Who
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Candidat-Who** is a Laravel-based web application for managing **SK officials, running candidates, elections, voters, and feedback**.
+It helps barangays organize and track officials, candidates, and election-related activities with an easy-to-use interface.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📦 Installation
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Follow these steps to set up **Candidat-Who** locally:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 1. Clone the Repository
 
-## Learning Laravel
+```bash
+git clone https://github.com/your-username/candidat-who.git
+cd candidat-who
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 2. Install PHP Dependencies
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```bash
+composer install
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 3. Setup Environment
 
-## Laravel Sponsors
+Rename `.env.example` to `.env`:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```bash
+cp .env.example .env
+```
 
-### Premium Partners
+Update `.env` with your database and app details:
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```
+APP_NAME=Candidat-Who
+APP_URL=http://candidat-who.test
 
-## Contributing
+DB_DATABASE=candidat-who
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 5. Generate Application Key
 
-## Code of Conduct
+```bash
+php artisan key:generate
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 6. Create Session Table
 
-## Security Vulnerabilities
+```bash
+php artisan session:table
+php artisan migrate
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 7. Seed Super Admin User
 
-## License
+```bash
+php artisan db:seed --class=SuperAdminSeeder
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 8. Run Migrations
+
+```bash
+php artisan migrate
+```
+
+Visit **(http://candidat-who.test)** in your browser.
+
+---
+
+## 🧭 Navigation Guide
+
+### 1. **Authentication**
+
+* **Login/Register** – Access the system as Admin, Super Admin or User.
+
+### 2. **Home Page**
+
+* Public landing page with system overview.
+
+### 3. **Current SK Officials**
+
+* **Index:** View all current officials
+* **Create/Edit:** Add or update officials (**Admin and Super Admin**)
+* **Show:** View detailed profile of an official
+
+### 4. **Running SK Officials**
+
+* **Index:** List all candidates
+* **Show:** Candidate profile with platform and feedback
+* **Create/Edit:** Add or update candidates (**Admin and Super Admin**)
+
+
+### 5. **admin and superadmin**
+
+* **Admin only:** Register and manage candidates
+* **Super Admin only:** Verify user and Admin Account as well as Register and manage candidates
+
+### 6. **Feedback**
+
+* **Users:** Submit feedback
+* **Admin:** View and manage feedback
+
+### 7. **Admin Dashboard**
+
+* Central hub to manage the entire system:
+
+  * Officials
+  * Candidates
+  * Elections
+  * Voters
+  * Feedback
+  * Reports
+
+---
+
+## ⚙️ Tech Stack
+
+* **Framework:** Laravel 12 (PHP 8.4+)
+* **Frontend:** Blade + TailwindCSS
+* **Database:** MySQL
+
+---
+
+## 📌 Notes
+
+* Reset database if needed:
+
+```bash
+php artisan migrate:fresh --seed
+```
+
+---
+
