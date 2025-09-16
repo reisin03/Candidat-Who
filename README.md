@@ -95,22 +95,20 @@ Visit **(http://candidat-who.test)** in your browser.
 
 ### 5. **admin and superadmin**
 
-* **Admin only:** Register and manage candidates
+* **Admin:** Register and manage candidates
 * **Super Admin only:** Verify user and Admin Account as well as Register and manage candidates
 
 ### 6. **Feedback**
 
 * **Users:** Submit feedback
-* **Admin:** View and manage feedback
+* **Admin and SuperAdmin:** View and manage feedback
 
-### 7. **Admin Dashboard**
+### 7. **Admin and Super Admin Dashboard**
 
 * Central hub to manage the entire system:
 
   * Officials
   * Candidates
-  * Elections
-  * Voters
   * Feedback
   * Reports
 
