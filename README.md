@@ -33,7 +33,7 @@ cp .env.example .env
 Update `.env` with your database and app details:
 
 ```
-APP_NAME=Candidat-Who
+APP_NAME=Candidat.Who?
 APP_URL=http://candidat-who.test
 
 DB_DATABASE=candidat-who
