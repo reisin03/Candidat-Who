@@ -12,7 +12,7 @@ Follow these steps to set up **Candidat-Who** locally:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/candidat-who.git
+git clone https://github.com/reisin03/Candidat-Who.git
 cd candidat-who
 ```
 
